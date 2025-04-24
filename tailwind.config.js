@@ -103,10 +103,6 @@ const config = {
       black: "900",
     },
 
-    fontFamily: {
-      // sans: ["Graphik", "sans-serif"],
-    },
-
     fontSize: {
       // Default font size
       sm: "0.8rem",
@@ -237,7 +233,7 @@ const config = {
           },
           "30%, 0%": {
             borderRadius: "100px",
-            background: "#0284c7",
+            background: "#e15381",
             transition: "1s ease",
             boxShadow:
               " rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px",
