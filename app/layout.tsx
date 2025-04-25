@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import {kanit} from "@/app/font";
+import { kanit } from "@/app/font";
 import "./globals.css";
-
-
-
 
 export const metadata: Metadata = {
   title: "Create Next App",
