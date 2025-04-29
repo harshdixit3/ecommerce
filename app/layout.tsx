@@ -3,6 +3,8 @@ import { kanit } from "@/app/font";
 import "./globals.css";
 import Providers from "@/providers";
 import * as React from "react";
+import { ThemeProvider } from "next-themes";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,7 +19,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kanit.className}>
-        <Providers>{children}</Providers>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Providers>{children}</Providers>
+          <ThemeToggle />
+        </ThemeProvider>
       </body>
     </html>
   );
