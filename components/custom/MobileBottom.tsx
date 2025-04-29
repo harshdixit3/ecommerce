@@ -1,7 +1,7 @@
 import React from "react";
 
 const MobileBottom = () => {
-  return <div>MobileBottom</div>;
+  return <div className="hidden">MobileBottom</div>;
 };
 
 export default MobileBottom;
