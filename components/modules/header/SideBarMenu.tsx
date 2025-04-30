@@ -21,7 +21,7 @@ export default function SidebarMenu() {
   useEffect(() => {
     const getPages = async () => {
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/pages")
+        .get("https://fractal-api-zeta.vercel.app/api/pages")
         .then((response) => {
           setPages(response.data.data);
         })
@@ -32,7 +32,7 @@ export default function SidebarMenu() {
 
     const getCategories = async () => {
       await axios
-        .get(process.env.NEXT_PUBLIC_API_URL + "/api/categories")
+        .get("https://fractal-api-zeta.vercel.app/api/categories")
         .then((response) => {
           setCategories(response.data.data);
         })
