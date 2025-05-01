@@ -1,7 +1,7 @@
 import React from "react";
 
 const MainMenu = () => {
-  return <div>MainMenu</div>;
+  return <section className="hidden lg:flex">MainMenu</section>;
 };
 
 export default MainMenu;

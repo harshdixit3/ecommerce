@@ -3,7 +3,7 @@ import Main from "@/components/modules/header/main";
 const Header = () => {
   return (
     <>
-      <header>
+      <header className="">
         <Main />
       </header>
     </>
