@@ -10,6 +10,7 @@ import React from "react";
 
 const Main = () => {
   const [openSearchBar, setOpenSearchBar] = useState(false);
+  const [openCartBar, setOpenCartBar] = useState(false);
   return (
     <>
       <section className="h-full">
@@ -21,6 +22,8 @@ const Main = () => {
             <IconsGroups
               openSearchBar={openSearchBar}
               setOpenSearchBar={setOpenSearchBar}
+              openCartBar={openCartBar}
+              setOpenCartBar={setOpenCartBar}
             />
           </Row>
         </Container>
