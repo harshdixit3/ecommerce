@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import SearchBar from "./SearchBar";
+import CartBar from "./CartBar";
 
 const IconsGroups = ({
   openSearchBar,
@@ -17,7 +18,7 @@ const IconsGroups = ({
 }) => {
   return (
     <section>
-      <Row>
+      <Row className="lg:gap-2">
         <SearchBar
           openSearchBar={openSearchBar}
           setOpenSearchBar={setOpenSearchBar}
@@ -50,6 +51,7 @@ const IconsGroups = ({
         >
           <CiUser size={40} />
         </Button>
+        <CartBar openCartBar={openCartBar} setOpenCartBar={setOpenCartBar} />
       </Row>
     </section>
   );

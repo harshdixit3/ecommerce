@@ -3,7 +3,7 @@ import { ClipLoader } from "react-spinners";
 
 export default function Loading({
   isLoading,
-  size = 100,
+  size = 30,
   color = "#115e59",
 }: {
   isLoading: boolean;

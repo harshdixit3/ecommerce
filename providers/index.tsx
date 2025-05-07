@@ -1,5 +1,6 @@
 import React from "react";
 import { ClerkProvider } from "@clerk/nextjs";
+import FramerMotionProvider from "./FramerMotionProvider";
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -20,7 +21,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         signInFallbackRedirectUrl="/"
         signUpFallbackRedirectUrl="/"
       >
-        {children}
+        <FramerMotionProvider>{children}</FramerMotionProvider>
       </ClerkProvider>
     </div>
   );
