@@ -24,7 +24,7 @@ const IconsGroups = ({
           size="icon"
           onClick={() => setOpenSearchBar(!openSearchBar)}
         >
-          <CiSearch size={40} className="hover:text-primary-900" />
+          <CiSearch size="40" className="hover:text-primary-900" />
         </Button>
       </Row>
     </section>

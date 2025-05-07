@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { kanit } from "@/app/font";
+
 import "./globals.css";
 import Providers from "@/providers";
+import { kanit } from "./font";
 import * as React from "react";
-import { ThemeProvider } from "next-themes";
-import ThemeToggle from "@/components/ThemeToggle";
 
 export const metadata: Metadata = {
   title: "Ecommer",
@@ -18,16 +17,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={(kanit.className, "antialiased")}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Providers>{children}</Providers>
-          <ThemeToggle />
-        </ThemeProvider>
+      <body className={kanit.className}>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
