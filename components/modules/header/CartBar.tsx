@@ -1,8 +1,11 @@
 import React from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Trash } from "lucide-react";
 import { CartItem } from "@/types";
+import CurrencyFormat from "@/components/custom/CurrencyFormat";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const CartBar = ({
   openCartBar,
@@ -56,6 +59,23 @@ const CartBar = ({
                 >
                   <Trash className="hover:text-primary-500" size={20} />
                 </div>
+              </div>
+            </div>
+            <div className="flex flex-col gap-6">
+              <div className="flex justify-center font-bold">
+                <h6 className="text-left">Subtotal :</h6>
+                <strong>
+                  <CurrencyFormat value={200} className="text-right" />
+                </strong>
+              </div>
+              <div className="flex flex-col gap-">
+                <Link
+                  href="/cart"
+                  className="rounded-sm py-4 flex justify-center hover:bg-primary-500 hover:text-white uppercase border-border"
+                >
+                  view cart
+                </Link>
+                <Button></Button>
               </div>
             </div>
           </div>
