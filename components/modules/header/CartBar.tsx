@@ -17,6 +17,13 @@ const CartBar = ({
   const handleRemoveItem = (item: CartItem) => {
     // Todo
   };
+
+  const addToCartHandler = () => {
+    //  try {
+    //  }catch{
+    //  }
+  };
+
   return (
     <AnimatePresence>
       {openCartBar && (
@@ -60,22 +67,65 @@ const CartBar = ({
                   <Trash className="hover:text-primary-500" size={20} />
                 </div>
               </div>
+              <div className="flex justify-bewteen gap-4 snap-center cursor-grab">
+                <Image
+                  src=""
+                  width={200}
+                  height={200}
+                  alt="prod"
+                  className="h-20 w-20 object-cover"
+                />
+                <div className="flex flex-col gap-1">
+                  <span className="capitalize">Name Here</span>
+                  <div className="inline-flex gap-4 font-bold">
+                    <span className="font-bold">2</span>
+                    <span>X</span>
+                    <span className="font-bold">$200</span>
+                  </div>
+                  <div className="inline-flex justify-between">
+                    <div className="inline-flex justify-between gap-1 items-center">
+                      <span>Style:</span>
+                      <span className="font-bold">Style Name</span>
+                    </div>
+                    <div className="inline-flex gap-1">
+                      <span>Option:</span>
+                      <span className="font-bold">Option name</span>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="flex item-start"
+                  role="button"
+                  onClick={() => handleRemoveItem(item)}
+                >
+                  <Trash className="hover:text-primary-500" size={20} />
+                </div>
+              </div>
             </div>
             <div className="flex flex-col gap-6">
               <div className="flex justify-center font-bold">
-                <h6 className="text-left">Subtotal :</h6>
+                <div className="text-xl ">Subtotal :</div>
                 <strong>
                   <CurrencyFormat value={200} className="text-right" />
                 </strong>
               </div>
-              <div className="flex flex-col gap-">
+              <div className="flex flex-col gap-2">
                 <Link
                   href="/cart"
-                  className="rounded-sm py-4 flex justify-center hover:bg-primary-500 hover:text-white uppercase border-border"
+                  className="rounded-sm py-4 flex justify-center text-sm hover:bg-red-500 hover:text-white uppercase border-border"
                 >
                   view cart
                 </Link>
-                <Button></Button>
+                <Button
+                  onClick={() => {
+                    addToCartHandler();
+                  }}
+                  variant="default"
+                  size="lg"
+                  className="rounded-sm py-8 bg-black text-white hover:text-black hover:bg-white text-sm capitalize"
+                >
+                  CHECKOUT
+                </Button>
               </div>
             </div>
           </div>

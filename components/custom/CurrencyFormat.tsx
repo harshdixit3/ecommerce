@@ -16,7 +16,7 @@ const CurrencyFormat = ({
         className
       )}
       value={value}
-      prefix="$"
+      prefix="₹"
       decimalScale={3}
       thousandSeparator=","
       decimalSeparator="."
