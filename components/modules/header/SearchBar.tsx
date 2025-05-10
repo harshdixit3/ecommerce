@@ -47,7 +47,7 @@ const SearchBar = ({
   return (
     <>
       {(isValidating || isLoading) && <Loading isLoading={true} />}
-      <Dialog open={!openSearchBar}>
+      <Dialog open={openSearchBar}>
         <DialogContent className="lg:max-w-screen-xl z-[99999] [&>.closeBtn]:hidden">
           <div className="flex items-center w-full gap-4">
             <Search className="text-slate-300" />

@@ -4,6 +4,7 @@ import React from "react";
 import { CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";
 import SearchBar from "./SearchBar";
 import CartBar from "./CartBar";
+import { useRouter } from "next/navigation";
 
 const IconsGroups = ({
   openSearchBar,
@@ -16,6 +17,7 @@ const IconsGroups = ({
   openCartBar: boolean;
   setOpenCartBar: (v: boolean) => void;
 }) => {
+  const router = useRouter();
   return (
     <section>
       <Row className="lg:gap-2">
@@ -47,7 +49,7 @@ const IconsGroups = ({
           className="hidden lg:block relative"
           variant="nostyle"
           size="icon"
-          // onClick={() => router.push("/account/dashboard")}
+          onClick={() => router.push("/account/dashboard")}
         >
           <CiUser size={40} />
         </Button>

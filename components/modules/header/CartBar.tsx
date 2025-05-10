@@ -1,5 +1,5 @@
 import React from "react";
-import { AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { Trash } from "lucide-react";
 import { CartItem } from "@/types";
@@ -27,12 +27,30 @@ const CartBar = ({
   return (
     <AnimatePresence>
       {openCartBar && (
-        <div className="absolute top-[54px] right-0 h-fit w-[340px] bg-white p-4 shadow-2xl">
+        <m.div
+          onMouseLeave={() => setOpenCartBar(!openCartBar)}
+          initial={{ opacity: 0, y: -15 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            filter: "blur(0px)",
+            transition: { type: "spring", duration: 0.7 },
+          }}
+          exit={{
+            y: -20,
+            opacity: 0,
+            filter: "blur(5px)",
+            scale: "scale(0)",
+            transition: { ease: "easeIn", duration: 0.22 },
+          }}
+          className="absolute top-[50px] right-0 h-fit w-[360px] bg-white z-[9999] p-4 shadow-2xl"
+        >
           <div className="flex flex-col justify-between gap-8">
             <span className="text-center">
               You have <strong>0</strong> Items in your cart
             </span>
-            <div className="flex flex-col snap-y max-h-[360px]: gap-6 border-b border-grey-200 pb-4">
+            {/* Todo */}
+            <div className="flex flex-col snap-y max-h-[360px]: gap-6 border-b border-gray-200 pb-4 overflow-y-auto">
               <div className="flex justify-bewteen gap-4 snap-center cursor-grab">
                 <Image
                   src=""
@@ -129,7 +147,7 @@ const CartBar = ({
               </div>
             </div>
           </div>
-        </div>
+        </m.div>
       )}
     </AnimatePresence>
   );
