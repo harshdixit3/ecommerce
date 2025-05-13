@@ -39,7 +39,7 @@ const MainMenu = () => {
             pageApi.data.map((item: Page) => (
               <li key={item._id} className="relative">
                 <Link
-                  href="/"
+                  href={item.link}
                   className={cn(
                     "h-full duration-300 after:absolute after:top-[26px] after:left-0  after:w-0 after:h-1 after:bg-primary-400 after:duration-100 after:ease-linear hover:after:w-full",
                     pathname === item.link && "border-b-2 border-primary-400"

@@ -61,6 +61,7 @@
     "react-spinners": "^0.14.1",
     "redux": "^5.0.1",
     "redux-logger": "^3.0.6",
+    "sonner": "^2.0.3",
     "swiper": "^11.2.6",
     "swr": "^2.3.3",
     "tailwind-merge": "^2.6.0",

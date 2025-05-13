@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "@/providers";
 import { kanit } from "./font";
 import * as React from "react";
+import {Toaster} from "sonner";
 
 export const metadata: Metadata = {
   title: "Ecommer",
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={kanit.className}>
         <Providers>{children}</Providers>
+        <Toaster />
       </body>
     </html>
   );
