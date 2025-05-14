@@ -17,11 +17,11 @@ const MainMenu = () => {
       .then((res) => res.data);
 
   const { data, error, isLoading } = useSWR<Category[]>(
-      process.env.NEXT_PUBLIC_API_URL + "/api/categories",
+    process.env.NEXT_PUBLIC_API_URL + "/api/categories",
     fetcher
   );
   const pageApi = useSWR<Category[]>(
-      process.env.NEXT_PUBLIC_API_URL +  "/api/pages",
+    process.env.NEXT_PUBLIC_API_URL + "/api/pages",
     fetcher
   );
 
@@ -37,7 +37,7 @@ const MainMenu = () => {
         <ul className="flex gap-32 justify-between items-center capitalize">
           {pageApi.data &&
             pageApi.data.map((item: Page) => (
-              <li key={item._id} className="relative">
+              <li key={item._id} className="relative text-gray-400">
                 <Link
                   href={item.link}
                   className={cn(
@@ -51,7 +51,7 @@ const MainMenu = () => {
             ))}
           <li className="group">
             <button
-              className="capitalize inline-flex items-center "
+              className="capitalize inline-flex items-center text-gray-400"
               onClick={() => setShow(!show)}
             >
               Categories
@@ -78,12 +78,12 @@ const MainMenu = () => {
                   }}
                   className="grid grid-cols-4 justify-items-center grid-rows-auto
           fixed bg-white py-4 px-4 h-[560px] w-[1100px] z-[999999] 
-          right-[300px] top-[54px] gap-12 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] shadow-neutral-500"
+          right-[300px] top-[54px] gap-12 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]  shadow-neutral-500"
                 >
                   {data &&
                     data.slice(0, 8).map((item: Category) => (
                       <ul
-                        className="flex flex-col gap-4 text-xl"
+                        className="flex  flex-col gap-4 text-xl"
                         key={item._id}
                       >
                         <li>
@@ -104,7 +104,7 @@ const MainMenu = () => {
                             (subCat: SubCategory, idx: number) => (
                               <li
                                 key={idx}
-                                className="font-normal duration-300 hover:translate-x-1"
+                                className="text-gray-400 font-normalduration-300 hover:translate-x-1"
                               >
                                 <Link
                                   className="hover:text-secondary-500"

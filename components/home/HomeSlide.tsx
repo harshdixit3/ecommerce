@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-// import "./style.css";
+import "./style.css";
 import { m } from "framer-motion";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Slide } from "@/types";
@@ -14,6 +14,7 @@ import Link from "next/link";
 import Container from "@/components/custom/Container";
 import { Skeleton } from "@/components/ui/skeleton";
 import useSWR, { Fetcher } from "swr";
+import { toast } from "sonner";
 
 export default function HomeSlide() {
   const animation = {
@@ -33,7 +34,7 @@ export default function HomeSlide() {
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
     fetcher
   );
-  if (error) return <div>Failed to load Api</div>;
+  if (error) return toast.error(error.message);
 
   return (
     <section>
