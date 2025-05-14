@@ -17,11 +17,11 @@ const MainMenu = () => {
       .then((res) => res.data);
 
   const { data, error, isLoading } = useSWR<Category[]>(
-    "https://fractal-api-zeta.vercel.app/api/categories",
+      process.env.NEXT_PUBLIC_API_URL + "/api/categories",
     fetcher
   );
   const pageApi = useSWR<Category[]>(
-    "https://fractal-api-zeta.vercel.app/api/pages",
+      process.env.NEXT_PUBLIC_API_URL +  "/api/pages",
     fetcher
   );
 

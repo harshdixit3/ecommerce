@@ -35,7 +35,7 @@ const SearchBar = ({
       .then((res) => res.data);
 
   const { data, error, isLoading, isValidating } = useSWR<Product[]>(
-    "https://fractal-api-zeta.vercel.app/api/products?search=" + search,
+      process.env.NEXT_PUBLIC_API_URL + "/api/products?search=" + search,
     fetcher
   );
 
