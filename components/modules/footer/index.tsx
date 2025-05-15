@@ -84,14 +84,14 @@ const Footer = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-gray-950 bg-blend-darken pb-10"
+        className="bg-neutral-200 text-pretty text-gray-500"
       >
         <Container>
           <div className="flex-col gap-12">
             <div className="grid grid-cols-1 lg:grid-cols-4 text-slate-400 text-xl">
               <ul className="flex flex-col gap-4">
                 <li className="my-10">
-                  <h1 className="text-3xl font-bold text-white tracking-wider">
+                  <h1 className="text-3xl font-bold hover:text-primary-300 text-white tracking-wider">
                     Ecommmer
                   </h1>
                 </li>
@@ -107,13 +107,13 @@ const Footer = () => {
               </ul>
               <ul className="flex flex-col gap-4">
                 <li className="my-10">
-                  <h1 className="text-2xl font-bold text-white tracking-wider">
+                  <h1 className="text-2xl font-bold hover:text-primary-300 text-white tracking-wider">
                     Informations
                   </h1>
                 </li>
                 <li className="flex gap-4">
                   <Link
-                    className="flex gap-4 hover:text-primary-500"
+                    className="flex gap-4 hover:text-secondary-500"
                     href="/account/dashboard"
                   >
                     My account
@@ -121,18 +121,18 @@ const Footer = () => {
                 </li>
                 <li className="flex gap-4">
                   <Link
-                    className="flex gap-4 hover:text-primary-500"
+                    className="flex gap-4 hover:text-secondary-500"
                     href={isSignedIn ? "/account/dashboard" : "/sign-in"}
                   >
                     {isSignedIn ? "Dashboard" : "Login"}
                   </Link>
                 </li>
-                <li className="flex gap-4 hover:text-primary-500">
+                <li className="flex gap-4 hover:text-secondary-500">
                   <Link className="flex gap-4" href="/cart">
                     My cart
                   </Link>
                 </li>
-                <li className="flex gap-4 hover:text-primary-500">
+                <li className="flex gap-4 hover:text-secondary-500">
                   <Link className="flex gap-4" href="/checkout">
                     Checkout
                   </Link>
@@ -140,27 +140,27 @@ const Footer = () => {
               </ul>
               <ul className="flex flex-col gap-4">
                 <li className="my-10">
-                  <h1 className="text-2xl font-bold text-white tracking-wider">
+                  <h1 className="text-2xl font-bold hover:text-primary-300 text-white tracking-wider">
                     Services
                   </h1>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-primary-500">
+                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
                     About Us
                   </Link>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-primary-500">
+                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
                     Careers
                   </Link>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-primary-500">
+                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
                     Delivery Information
                   </Link>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-primary-500">
+                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
                     Privacy Policy
                   </Link>
                 </li>
@@ -168,17 +168,17 @@ const Footer = () => {
 
               <ul className="flex flex-col gap-4">
                 <li className="my-10">
-                  <h1 className="text-2xl font-bold text-white tracking-wider">
+                  <h1 className="text-2xl font-bold hover:text-primary-300 text-white tracking-wider">
                     Subscribe
                   </h1>
                 </li>
-                <li className="flex gap-4">
+                <li className="flex gap-4 hover:text-secondary-500">
                   <h6>
                     Enter your email to get apps, product and latest updates.
                   </h6>
                 </li>
                 <li className="flex gap-4">
-                  <form className="flex w-full bg-transparent border border-white rounded-xl gap-4 items-center p-3">
+                  <form className="flex w-full bg-transparent border hover:text-secondary-500 border-white rounded-xl gap-4 items-center p-3">
                     <Mail size="40" />
                     <Input
                       name="email"
@@ -186,7 +186,7 @@ const Footer = () => {
                       onChange={(e) => setEmail(e.currentTarget.value)}
                       max={400}
                       placeholder="Enter Your Email Here.!"
-                      className="rounded-xl py-4 bg-transparent"
+                      className="rounded-xl py-4  bg-transparent"
                     />
                     <Button
                       variant="outline"
@@ -226,7 +226,7 @@ const Footer = () => {
                   alt="visa"
                 />
               </div>
-              <div className="inline-flex gap-4  items-center text-slate-300 text-sm">
+              <div className="inline-flex gap-4 hover:text-primary-300 items-center text-slate-700 text-sm">
                 @2025 Ecommer All rights reserved
               </div>
               <div className="inline-flex gap-4">

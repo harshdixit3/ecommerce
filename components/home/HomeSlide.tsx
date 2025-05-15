@@ -25,7 +25,7 @@ export default function HomeSlide() {
     },
   };
 
-  // Client-side data fetching with SWR
+
   const fetcher: Fetcher<Slide[], string> = (args) =>
     fetch(args)
       .then((res) => res.json())
