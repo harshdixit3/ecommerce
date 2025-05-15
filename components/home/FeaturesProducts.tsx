@@ -80,7 +80,7 @@ const FeaturesProducts = () => {
               .filter((item: Product) => item.featured === true)
               .map((item: Product, idx: number) => (
                 <SwiperSlide key={item._id}>
-                  {/* <ProductCard item={Product} /> */}
+                  <ProductCard item={item} />
                 </SwiperSlide>
               ))}
         </Swiper>

@@ -84,7 +84,7 @@ const Footer = () => {
         initial={{ opacity: 0, y: 100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="bg-neutral-200 text-pretty text-gray-500"
+        className="bg-neutral-200 text-pretty pb-10 text-gray-500"
       >
         <Container>
           <div className="flex-col gap-12">
@@ -145,22 +145,34 @@ const Footer = () => {
                   </h1>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
+                  <Link
+                    href="#"
+                    className="flex gap-4 hover:text-secondary-500"
+                  >
                     About Us
                   </Link>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
+                  <Link
+                    href="#"
+                    className="flex gap-4 hover:text-secondary-500"
+                  >
                     Careers
                   </Link>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
+                  <Link
+                    href="#"
+                    className="flex gap-4 hover:text-secondary-500"
+                  >
                     Delivery Information
                   </Link>
                 </li>
                 <li className="flex gap-4">
-                  <Link href="#" className="flex gap-4 hover:text-secondary-500">
+                  <Link
+                    href="#"
+                    className="flex gap-4 hover:text-secondary-500"
+                  >
                     Privacy Policy
                   </Link>
                 </li>
