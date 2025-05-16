@@ -1,21 +1,18 @@
 "use client";
 import React from "react";
-
 import Container from "@/components/custom/Container";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { m } from "framer-motion";
 import { cn } from "@/lib/utils";
 import useSWR, { Fetcher } from "swr";
 import { Product } from "@/types";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { useRouter } from "next/navigation";
 import { toast } from "sonner";
-import Loading from "../custom/Loading";
+// import Loading from "../custom/Loading";
 import ProductCard from "../custom/ProductCard";
+import Row from "../custom/Row";
+import Heading from "../custom/Heading";
 
 const FeaturesProducts = () => {
-  const router = useRouter();
-
   // Client-side data fetching with SWR
   const fetcher: Fetcher<Product[], string> = (args) =>
     fetch(args)
@@ -30,8 +27,11 @@ const FeaturesProducts = () => {
 
   return (
     <section className="py-10 w-full">
-      {isLoading && <Loading isLoading={true} />}
+      {/* {isLoading && <Loading isLoading={true} />} */}
       <Container>
+        <Row className="mb-10">
+          <Heading name="Featured Products" />
+        </Row>
         <Swiper
           breakpoints={{
             // when window width is >= 340
@@ -79,7 +79,7 @@ const FeaturesProducts = () => {
             data
               .filter((item: Product) => item.featured === true)
               .map((item: Product, idx: number) => (
-                <SwiperSlide key={item._id}>
+                <SwiperSlide key={idx}>
                   <ProductCard item={item} />
                 </SwiperSlide>
               ))}

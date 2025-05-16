@@ -25,7 +25,6 @@ export default function HomeSlide() {
     },
   };
 
-
   const fetcher: Fetcher<Slide[], string> = (args) =>
     fetch(args)
       .then((res) => res.json())
@@ -65,7 +64,7 @@ export default function HomeSlide() {
                     key={idx}
                     className="relative [&>button:block] hover:animate-heart-beating"
                     style={{
-                      backgroundImage: `url(${item.image})`,
+                      backgroundImage: `url('https://res.cloudinary.com/dlm0ieiyt/image/upload/v1724509216/ecommerce-carrefour/login_onnsp6.png')`,
                       height: "700px",
                       width: "100%",
                       backgroundSize: "cover",

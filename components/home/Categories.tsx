@@ -9,6 +9,8 @@ import useSWR, { Fetcher } from "swr";
 import { Slide } from "@/types";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { useRouter } from "next/navigation";
+import Row from "../custom/Row";
+import Heading from "../custom/Heading";
 
 const Categories = () => {
   const animation = {
@@ -26,7 +28,7 @@ const Categories = () => {
     fetch(args)
       .then((res) => res.json())
       .then((res) => res.data);
-  const { data, error, isLoading } = useSWR<Slide[]>(
+  const { data } = useSWR<Slide[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
     fetcher
   );
@@ -37,6 +39,9 @@ const Categories = () => {
   return (
     <section className="py-10 w-full">
       <Container>
+        <Row className="mb-10">
+          <Heading name="Shop By Categories" />
+        </Row>
         <Swiper
           breakpoints={{
             // when window width is >= 340
