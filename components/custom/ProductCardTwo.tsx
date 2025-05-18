@@ -6,8 +6,8 @@ import {
 import { Product } from "@/types";
 import Image from "next/image";
 import React from "react";
-import CurrencyFormat from "@/components/custom/CurrencyFormat";
-import { Eye, Heart } from "lucide-react";
+import CurrencyFormat from "./CurrencyFormat";
+import { Eye } from "lucide-react";
 import { Button } from "../ui/button";
 import { useRouter } from "next/navigation";
 import { m } from "framer-motion";
@@ -21,32 +21,33 @@ export default function ProductCardTwo({ item }: { item: Product }) {
   const bestPriceWithoutDiscount = getBestPriceWithoutDiscountFromProduct(item);
   const discountRate = getDiscountRate(
     bestPriceWithoutDiscount,
-    bestPriceWithDiscount,
+    bestPriceWithDiscount
   );
 
   const router = useRouter();
 
-  const addToWishList = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.setAttribute("disabled", "true");
-    // TODO::Do logic add to wishlist
-  };
+  // TODO::Do logic add to wishlist
+  // const addToWishList = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //   e.currentTarget.setAttribute("disabled", "true");
+  // };
 
   return (
-    <div className="flex flex-col gap-4 items-center cursor-pointer">
+    <div className="flex flex-col gap-10 items-center cursor-pointer">
       {/* images  */}
       <div
         role="button"
+        data-cy="productItem"
         onClick={() => {
           router.push(`/products/${item.slug}`);
         }}
-        className="flex group/image h-[500px] relative overflow-hidden"
+        className="flex group/image h-[400px] relative overflow-hidden"
       >
         <Image
           src={images[0]}
           alt="image"
           width="300"
-          height="450"
-          className="duration-300 ease-linear group-hover/image:translate-x-full"
+          height="400"
+          className="duration-300 ease-linear group-hover/image:translate-x-full object-cover"
         />
         <Image
           src={images[1]}
@@ -72,14 +73,15 @@ export default function ProductCardTwo({ item }: { item: Product }) {
           >
             <Eye />
           </Button>
-          <Button
+          {/* TODO::New feature */}
+          {/* <Button
             onClick={(e) => addToWishList(e)}
             variant="outline"
             size="icon"
             className="hover:bg-primary-500 hover:text-white"
           >
             <Heart />
-          </Button>
+          </Button> */}
         </m.div>
       </div>
 
@@ -89,6 +91,7 @@ export default function ProductCardTwo({ item }: { item: Product }) {
         <p className="capitalize text-sm">
           {item.description.substring(0, 30)}..
         </p>
+
         <div className="inline-flex justify-center gap-4 items-center">
           {discountRate > 0 ? (
             <div className="flex flex-wrap gap-4">

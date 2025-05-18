@@ -60,12 +60,12 @@ export default function ProductsTopBar({
           {products.length} results
         </div>
 
-        <div className="ms-auto">
+        <div className="ms-auto capitalize">
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline">{filter ? filter : slug}</Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-56 bg-primary-100">
               <DropdownMenuSeparator />
               <DropdownMenuRadioGroup value={"bottom"}>
                 <DropdownMenuRadioItem
@@ -100,7 +100,7 @@ export default function ProductsTopBar({
             <DropdownMenuTrigger asChild>
               <Button variant="outline">{perpage}</Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56">
+            <DropdownMenuContent className="w-56 bg-primary-100">
               <DropdownMenuSeparator />
               <DropdownMenuRadioGroup value={"bottom"}>
                 <DropdownMenuRadioItem

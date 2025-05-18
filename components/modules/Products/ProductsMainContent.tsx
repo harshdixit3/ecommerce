@@ -31,7 +31,7 @@ export default function ProductsMainContent({
   const [perpage, setPerPages] = useState<number>(10);
   const [filter, setFilter] = useState<string>("latest");
   const [page, setPage] = useState(1);
-  const count = Math.ceil(products.length / perpage);
+  // const count = Math.ceil(products.length / perpage);
   const _DATA = usePagination(products, perpage);
 
   const handleChange = (e: React.ChangeEvent<unknown>, p: number) => {
@@ -91,7 +91,7 @@ export default function ProductsMainContent({
           {/* pagination */}
           <div className="py-10 flex justify-between mt-auto">
             <Stack spacing={2}>
-              <Pagination count={10} page={page} onChange={handleChange} />
+              <Pagination count={15} page={page} onChange={handleChange} />
             </Stack>
 
             <div className="flex ms-auto">

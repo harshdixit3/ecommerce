@@ -1,6 +1,9 @@
-"use client";
-import { cn } from "@/lib/utils";
+import HeadingSidebar from "@/components/custom/HeadingSidebar";
 import React from "react";
+
+import ProductsFilters from "@/components/custom/ProductsFilters";
+import ProductsCatAccordions from "@/components/custom/ProductsCatAccordions";
+
 export default function ProductsSidebarLeft({
   minPrice,
   maxPrice,
@@ -18,5 +21,30 @@ export default function ProductsSidebarLeft({
   setLoading: (e: boolean) => void;
   className?: string;
 }) {
-  return <div className={cn("", className)}>ProductsMainContent</div>;
+  return (
+    <div className={`lg:max-w-[300px] h-full ${className}`}>
+      <div className="flex flex-col gap-8 items-center">
+        {/* product categories  */}
+        <div className="flex flex-col gap-2 items-center w-full">
+          <HeadingSidebar name="Product categories" />
+          <ProductsCatAccordions />
+        </div>
+
+        {/* filters prices */}
+        <div className="flex flex-col gap-2 items-center w-full">
+          <HeadingSidebar name="Filter by price" />
+          <ProductsFilters
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            setMinPrice={setMinPrice}
+            setMaxPrice={setMaxPrice}
+            setLoading={setLoading}
+            loading={loading}
+          />
+        </div>
+
+        {/* latest products  */}
+      </div>
+    </div>
+  );
 }
