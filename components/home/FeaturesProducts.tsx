@@ -18,9 +18,9 @@ const FeaturesProducts = () => {
     fetch(args)
       .then((res) => res.json())
       .then((res) => res.data);
-  const { data, error, isLoading } = useSWR<Product[]>(
+  const { data, error } = useSWR<Product[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/products",
-    fetcher
+    fetcher,
   );
 
   if (error) return toast.error("Data fetching error");
@@ -72,7 +72,7 @@ const FeaturesProducts = () => {
           }}
           modules={[Autoplay, Navigation, Pagination]}
           className={cn(
-            "mySwiper shadow-xl w-full flex items-center justify-between  border border-gray-200 rounded-md px-20 py-10"
+            "mySwiper shadow-xl w-full flex items-center justify-between  border border-gray-200 rounded-md px-20 py-10",
           )}
         >
           {data &&

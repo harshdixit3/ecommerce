@@ -31,7 +31,7 @@ export default function HomeSlide() {
       .then((res) => res.data);
   const { data, error, isLoading } = useSWR<Slide[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
-    fetcher
+    fetcher,
   );
   if (error) return toast.error(error.message);
 
@@ -117,7 +117,7 @@ export default function HomeSlide() {
                               ease: "linear",
                               duration: 0.8,
                             }}
-                            className="rounded-sm p-4 bg-white hover:bg-black hover:text-white"
+                            className="rounded-sm p-4 bg-white hover:bg-primary-200 hover:text-black"
                             href={`/${item.link}`}
                           >
                             {item.btn}
@@ -129,7 +129,7 @@ export default function HomeSlide() {
                         <Button
                           variant="default"
                           size="lg"
-                          className="hover:shadow-button px-12 py-8 bg-white text-black hover:text-white"
+                          className="hover:shadow-button px-12 py-8 bg-white hover:bg-primary-200 text-black hover:text-black"
                         >
                           <Link href={item.link} className="text-xl">
                             BUY NOW

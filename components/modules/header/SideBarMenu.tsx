@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Category, Page, SubCategory, SubPage } from "@/types";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { CiMenuFries } from "react-icons/ci";
+import { LuAlignJustify } from "react-icons/lu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -49,7 +49,7 @@ export default function SidebarMenu() {
     <>
       <Sheet>
         <SheetTrigger>
-          <CiMenuFries size={34} />
+          <LuAlignJustify className="text-gray-400 mt-2" size={34} />
         </SheetTrigger>
         <SheetContent
           className={cn("px-4 w-full md:w-[400px]  [&>#closeBtn]:text-3xl ")}

@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
 import { m } from "framer-motion";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import { Slide } from "@/types";
 import useSWR, { Fetcher } from "swr";
 import "swiper/css/navigation";
 
 const CtaTwo = () => {
-  const router = useRouter();
+  // const router = useRouter();
 
   // Client-side data fetching with SWR
   const fetcher: Fetcher<Slide[], string> = (args) =>
@@ -16,12 +16,12 @@ const CtaTwo = () => {
       .then((res) => res.data);
   const { data } = useSWR<Slide[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
-    fetcher
+    fetcher,
   );
 
-  const handleClick = (link: string) => {
-    router.push(link);
-  };
+  // const handleClick = (link: string) => {
+  //   router.push(link);
+  // };
   return (
     <m.section
       initial={{

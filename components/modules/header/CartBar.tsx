@@ -15,9 +15,7 @@ const CartBar = ({
   openCartBar: boolean;
   setOpenCartBar: (v: boolean) => void;
 }) => {
-  const handleRemoveItem = (item: CartItem) => {
-    // Todo
-  };
+  const handleRemoveItem = (item: CartItem) => {};
 
   const addToCartHandler = () => {
     //  try {

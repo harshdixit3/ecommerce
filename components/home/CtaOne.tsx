@@ -10,6 +10,7 @@ import { Slide } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useRouter } from "next/navigation";
 import useSWR from "swr";
+import { toast } from "sonner";
 
 export default function CtaOne() {
   // Client-side data fetching with SWR
@@ -18,10 +19,10 @@ export default function CtaOne() {
   const fetcher = (args: string) => fetch(args).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
     process.env.NEXT_PUBLIC_API_URL + "/api/slides",
-    fetcher
+    fetcher,
   );
   const slide = data?.filter((item: Slide) => item.slug === "cta-home")[0];
-  if (error) return <div>Failed to load Api</div>;
+  if (error) return toast.error("Not Able to load data");
 
   return (
     <section className="my-20">
@@ -43,7 +44,7 @@ export default function CtaOne() {
               <Button
                 variant="default"
                 size="lg"
-                className="uppercase text-xl py-8 px-6"
+                className="uppercase hover:bg-primary-200 text-xl py-8 px-6"
                 onClick={() => router.push(slide?.link ? slide?.link : "")}
               >
                 {slide?.btn}

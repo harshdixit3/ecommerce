@@ -16,13 +16,13 @@ const MainMenu = () => {
       .then((res) => res.json())
       .then((res) => res.data);
 
-  const { data, error, isLoading } = useSWR<Category[]>(
+  const { data, error } = useSWR<Category[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/categories",
-    fetcher
+    fetcher,
   );
   const pageApi = useSWR<Category[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/pages",
-    fetcher
+    fetcher,
   );
 
   if (error) return <div>data fetching category error</div>;
@@ -42,7 +42,7 @@ const MainMenu = () => {
                   href={item.link}
                   className={cn(
                     "h-full duration-300 after:absolute after:top-[26px] after:left-0  after:w-0 after:h-1 after:bg-primary-400 after:duration-100 after:ease-linear hover:after:w-full",
-                    pathname === item.link && "border-b-2 border-primary-400"
+                    pathname === item.link && "border-b-2 border-primary-400",
                   )}
                 >
                   {item.name}
@@ -77,7 +77,7 @@ const MainMenu = () => {
                     transition: { ease: "easeIn", duration: 0.22 },
                   }}
                   className="grid grid-cols-4 justify-items-center grid-rows-auto
-          fixed bg-white py-4 px-4 h-[560px] w-[1100px] z-[999999] 
+          fixed bg-white py-4 px-4 h-[560px] w-[1100px] z-[999999]
           right-[300px] top-[54px] gap-12 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]  shadow-neutral-500"
                 >
                   {data &&
@@ -89,8 +89,8 @@ const MainMenu = () => {
                         <li>
                           <Link
                             href={`/categories/${item.link}/products`}
-                            className="font-bold group/item w-full 
-                            transition-all flex items-center 
+                            className="font-bold group/item w-full
+                            transition-all flex items-center
                             gap-2 duration-100 ease-linear hover:translate-x-1"
                           >
                             <h5 className="transition ease-in-out hover:text-primary-500 capitalize">
@@ -113,7 +113,7 @@ const MainMenu = () => {
                                   {subCat.name}
                                 </Link>
                               </li>
-                            )
+                            ),
                           )}
                       </ul>
                     ))}

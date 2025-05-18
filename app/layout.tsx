@@ -5,6 +5,7 @@ import Providers from "@/providers";
 import { kanit } from "./font";
 import * as React from "react";
 import { Toaster } from "sonner";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Ecommer",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={kanit.className}>
+      <body className={cn("min-h-screen overflow-x-hidden", kanit.className)}>
         <Providers>{children}</Providers>
         <Toaster closeButton richColors position="top-right" />
       </body>
