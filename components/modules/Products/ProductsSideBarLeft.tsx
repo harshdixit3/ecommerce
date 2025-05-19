@@ -1,6 +1,5 @@
 import HeadingSidebar from "@/components/custom/HeadingSidebar";
 import React from "react";
-
 import ProductsFilters from "@/components/custom/ProductsFilters";
 import ProductsCatAccordions from "@/components/custom/ProductsCatAccordions";
 

@@ -2,34 +2,30 @@
 import Container from "@/components/custom/Container";
 import Logo from "@/components/custom/Logo";
 import Row from "@/components/custom/Row";
-import { useState } from "react";
-import IconsGroups from "./IconsGroups";
+import React, { useState } from "react";
 import MainMenu from "./MainMenu";
+import IconsGroups from "./IconsGroups";
 import MobileButton from "./MobileButton";
-import React from "react";
 
-const Main = () => {
+export default function Main() {
   const [openSearchBar, setOpenSearchBar] = useState(false);
   const [openCartBar, setOpenCartBar] = useState(false);
-  return (
-    <>
-      <section className="h-full">
-        <Container>
-          <Row className="justify-between">
-            <MobileButton />
-            <Logo />
-            <MainMenu />
-            <IconsGroups
-              openSearchBar={openSearchBar}
-              setOpenSearchBar={setOpenSearchBar}
-              openCartBar={openCartBar}
-              setOpenCartBar={setOpenCartBar}
-            />
-          </Row>
-        </Container>
-      </section>
-    </>
-  );
-};
 
-export default Main;
+  return (
+    <section className="h-full">
+      <Container>
+        <Row className="justify-between">
+          <MobileButton />
+          <Logo />
+          <MainMenu />
+          <IconsGroups
+            openSearchBar={openSearchBar}
+            openCartBar={openCartBar}
+            setOpenSearchBar={setOpenSearchBar}
+            setOpenCartBar={setOpenCartBar}
+          />
+        </Row>
+      </Container>
+    </section>
+  );
+}

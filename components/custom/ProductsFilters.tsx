@@ -31,7 +31,7 @@ export default function ProductsFilters({
               defaultValue={0}
               type="range"
               min="0"
-              max="7000"
+              max={7000}
               step="10"
               onMouseUp={(e: React.MouseEvent<HTMLInputElement>) =>
                 setMinPrice(parseInt(e.currentTarget.value))
@@ -77,7 +77,7 @@ export default function ProductsFilters({
               max="7000"
               value={minPricePreview}
               readOnly
-              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500 "
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-300 focus:ring-primary-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-300 dark:focus:ring-primary-300 "
               placeholder=""
               required
             />
@@ -91,7 +91,7 @@ export default function ProductsFilters({
               id="max-price-input"
               min="0"
               max="7000"
-              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-500 dark:focus:ring-primary-500"
+              className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-primary-300 focus:ring-primary-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder:text-gray-400 dark:focus:border-primary-300 dark:focus:ring-primary-300"
               placeholder=""
               readOnly
               required

@@ -9,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-// import MobileSidebarLeft from "./MobileSidebarLeft";
+import MobileSidebarLeft from "./MobileSidebarLeft";
 import { Product } from "@/types";
 
 export default function ProductsTopBar({
@@ -46,14 +46,14 @@ export default function ProductsTopBar({
   return (
     <div className="lg:flex items-center justify-between w-full ">
       <div className="w-full flex items-center gap-4 flex-1 justify-between">
-        {/* <MobileSidebarLeft
+        <MobileSidebarLeft
           minPrice={minPrice}
           maxPrice={maxPrice}
           setMinPrice={setMinPrice}
           setMaxPrice={setMaxPrice}
           loading={loading}
           setLoading={setLoading}
-        /> */}
+        />
 
         <div className="hidden lg:flex">
           Showing {maxPage === page ? products.length : perpage * page} of{" "}
