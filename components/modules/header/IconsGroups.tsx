@@ -61,7 +61,7 @@ export default function IconsGroups({
             size={40}
             className="font-bold hover:text-primary-900"
           />
-          <span className="absolute flex items-center justify-center  text-white text-base -top-1 justify-items-stretch -right-2 h-6 w-6 rounded-full bg-primary-500">
+          <span className="absolute flex items-center justify-center text-white text-base -top-1 justify-items-stretch -right-0 h-5 w-5 rounded-full bg-primary-500">
             {cart.cartItems.length}
           </span>
         </Button>
@@ -73,7 +73,7 @@ export default function IconsGroups({
             size="icon"
             onClick={() => router.push("/account/dashboard")}
           >
-            <CiUser size={40} />
+            <CiUser />
           </Button>
         ) : (
           <Button

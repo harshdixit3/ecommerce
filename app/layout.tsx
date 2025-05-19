@@ -22,6 +22,7 @@ export default function RootLayout({
       <body className={cn("min-h-screen overflow-x-hidden", kanit.className)}>
         <Providers>{children}</Providers>
         <Toaster closeButton richColors position="top-right" />
+        <script type="module"></script>
       </body>
     </html>
   );

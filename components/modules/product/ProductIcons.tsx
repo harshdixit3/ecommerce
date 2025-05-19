@@ -51,7 +51,7 @@ export default function ProductIcons({
         }
         const _uid: string = `${data._id}_${data.styleBefore}_${data.optionBefore}`;
         const exist: CartItem | undefined = cart.cartItems.find(
-          (p: CartItem) => p._uid === _uid,
+          (p: CartItem) => p._uid === _uid
         );
         if (exist) {
           //update
@@ -70,7 +70,7 @@ export default function ProductIcons({
               qty,
               option: data.option,
               _uid,
-            }),
+            })
           );
           toast.success("product added to cart");
         }
@@ -81,7 +81,7 @@ export default function ProductIcons({
       .finally(() => {
         setLoading(false);
         const element: HTMLElement = document?.querySelector(
-          "#openCart",
+          "#openCart"
         ) as HTMLElement;
         element.click();
       });
@@ -108,7 +108,7 @@ export default function ProductIcons({
         disabled={option.qty < 0 || loading ? true : false}
         variant="default"
         size="lg"
-        className="text-white text-2xl capitalize col-span-2 p-8 flex-1"
+        className="bg-white text-black hover:bg-primary-200 max-w-prose text-ellipsis text-2xl capitalize col-span-5 p-8 flex-1"
         data-cy="addToCartBtn"
       >
         add to cart
