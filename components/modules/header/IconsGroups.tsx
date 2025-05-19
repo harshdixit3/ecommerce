@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { CiLogin, CiSearch, CiShoppingCart, CiUser } from "react-icons/ci";

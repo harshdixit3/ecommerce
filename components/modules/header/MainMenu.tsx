@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import { Category, Page, SubCategory } from "@/types";
 import { m, AnimatePresence } from "framer-motion";
@@ -18,11 +19,11 @@ const MainMenu = () => {
 
   const { data, error } = useSWR<Category[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/categories",
-    fetcher,
+    fetcher
   );
   const pageApi = useSWR<Category[]>(
     process.env.NEXT_PUBLIC_API_URL + "/api/pages",
-    fetcher,
+    fetcher
   );
 
   if (error) return <div>data fetching category error</div>;
@@ -42,7 +43,7 @@ const MainMenu = () => {
                   href={item.link}
                   className={cn(
                     "h-full duration-300 after:absolute after:top-[26px] after:left-0  after:w-0 after:h-1 after:bg-primary-400 after:duration-100 after:ease-linear hover:after:w-full",
-                    pathname === item.link && "border-b-2 border-primary-400",
+                    pathname === item.link && "border-b-2 border-primary-400"
                   )}
                 >
                   {item.name}
@@ -113,7 +114,7 @@ const MainMenu = () => {
                                   {subCat.name}
                                 </Link>
                               </li>
-                            ),
+                            )
                           )}
                       </ul>
                     ))}

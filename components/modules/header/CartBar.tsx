@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { ShoppingBasket, Trash } from "lucide-react";
 import Image from "next/image";
@@ -24,14 +25,14 @@ export default function CartBar({
   setOpenCartBar: (v: boolean) => void;
 }) {
   const { cart, order } = useSelector(
-    memoize((state: IRootState) => ({ ...state })),
+    memoize((state: IRootState) => ({ ...state }))
   );
 
   const dispatch = useDispatch();
 
   const handleRemoveItem = (item: CartItem) => {
     const newCart = cart.cartItems.filter(
-      (p: CartItem) => p._uid !== item._uid,
+      (p: CartItem) => p._uid !== item._uid
     );
 
     dispatch(updateToCart(newCart));
@@ -41,7 +42,7 @@ export default function CartBar({
   const subtotal = cart.cartItems.reduce(
     (accumulator: number, currentValue: CartItem) =>
       accumulator + currentValue.price * currentValue.qty,
-    0,
+    0
   );
 
   const { isSignedIn, user } = useUser();
@@ -69,7 +70,7 @@ export default function CartBar({
           >
             &nbsp; Go to shop
           </Link>
-        </div>,
+        </div>
       );
       return;
     }
@@ -107,14 +108,7 @@ export default function CartBar({
     <AnimatePresence>
       {openCartBar && (
         <m.div
-          onMouseLeave={() => setOpenCartBar(!openCartBar)}
-          exit={{
-            y: -20,
-            opacity: 0,
-            filter: "blur(5px)",
-            scale: "scale(0)",
-            transition: { ease: "easeIn", duration: 0.22 },
-          }}
+          onClick={() => setOpenCartBar(!openCartBar)}
           initial={{ opacity: 0, y: -15 }}
           animate={{
             opacity: 1,

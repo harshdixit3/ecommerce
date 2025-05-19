@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { CartItem as CI } from "@/types";
 import { Trash } from "lucide-react";
